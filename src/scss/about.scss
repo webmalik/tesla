@@ -1,0 +1,105 @@
+.about {
+	@include adaptiveValue("margin-top", 320, 156);
+	position: relative;
+	z-index: 2;
+
+	&__header {
+		color: #fff;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 96, 48);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 90px;
+		@include adaptiveValue("margin-bottom", 42, 26);
+	}
+
+	&__description {
+		color: #fff;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 20, 14);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		max-width: 477px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 89, 81);
+		@include adaptiveValue("margin-top", 118, 93);
+	}
+
+	&__item {
+		position: relative;
+
+		max-width: 679px;
+		margin: 0 auto;
+		@include adaptiveValue("padding-top", 66, 38);
+		@include adaptiveValue("padding-bottom", 60, 40);
+		@include adaptiveValue("padding-left", 60, 28);
+		@include adaptiveValue("padding-right", 60, 28);
+		z-index: 5;
+
+		img {
+			display: block;
+			@include adaptiveValue("max-width", 59, 45);
+			@include adaptiveValue("max-height", 45, 34);
+			position: absolute;
+			top: toRem(-10);
+			left: toRem(-15);
+			z-index: 0;
+		}
+		&::after {
+			content: "";
+			display: block;
+			border-radius: 49px;
+			border: 2px solid rgba(213, 32, 59, 0.12);
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(7.849999904632568px);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+
+	&__title {
+		position: relative;
+		color: rgba(255, 255, 255, 0.86);
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 40, 20);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 100%;
+		@include adaptiveValue("margin-bottom", 70, 30);
+		z-index: 2;
+	}
+
+	&__text {
+		position: relative;
+		color: #fff;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 24, 14);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		@include adaptiveValue("padding-top", 44, 30);
+		border-top: 2px solid rgba($color: #fff, $alpha: 0.2);
+		z-index: 2;
+	}
+}
+
+@media (max-width: $mobile) {
+	.about {
+		&__item {
+			img {
+				top: toRem(-20);
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

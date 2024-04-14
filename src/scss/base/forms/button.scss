@@ -1,0 +1,26 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	display: inline-flex;
+	padding: 20px 35px;
+	border-radius: 32px;
+	background: $primaryColor;
+	transition: all 0.3s ease-in-out;
+	color: #fff;
+	text-align: center;
+	font-family: "Montserrat Alternates";
+	@include adaptiveValue("font-size", 20, 15);
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	@media (any-hover: hover) {
+		&:hover {
+			background: darken(#dc1d36, 10%);
+			transition: all 0.3s ease-in-out;
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}

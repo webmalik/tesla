@@ -1,0 +1,188 @@
+.banner {
+	@include adaptiveValue("padding-top", 116, 50);
+	position: relative;
+	z-index: 2;
+
+	&__bg {
+		position: absolute;
+		@include adaptiveValue("top", -100, -80);
+		overflow: hidden;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			max-width: 200%;
+		}
+	}
+	&__text {
+		color: #fff;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 45, 17.5);
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+
+		span {
+			color: $primaryColor;
+		}
+
+		span.label {
+			display: inline-block;
+			border-radius: 33.5px;
+			background: #f3efef;
+			transform: rotate(-2.124deg);
+			@include adaptiveValue("padding-top", 9, 6);
+			@include adaptiveValue("padding-bottom", 9, 6);
+			@include adaptiveValue("padding-left", 26, 14);
+			@include adaptiveValue("padding-right", 26, 14);
+			@include adaptiveValue("margin-left", -20, -5);
+			@include adaptiveValue("margin-right", -20, -5);
+		}
+	}
+
+	&__sm-img {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		@include adaptiveValue("max-width", 264, 50.5);
+		@include adaptiveValue("max-height", 67, 27);
+		@include adaptiveValue("border-radius", 31.5, 13.5);
+		border: 2px solid rgba(243, 239, 239, 0.59);
+		transform: translateY(30%);
+		margin-top: -50%;
+		img {
+			@include adaptiveValue("width", 264, 64);
+			object-fit: cover;
+			object-position: center -3vw;
+		}
+	}
+}
+
+.banner {
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		@include adaptiveValue("margin-top", 29, 64);
+	}
+
+	&__content-header {
+		color: #fff;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 15, 14);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+
+	&__content-text {
+		max-width: 297px;
+		margin: 0 auto;
+		color: #fff;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 15, 14);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-align: center;
+
+		span {
+			font-weight: 800;
+		}
+	}
+
+	&__content-label {
+		color: rgba(255, 255, 255, 0.62);
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 15, 10);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		@include adaptiveValue("margin-top", 38, 29);
+		@include adaptiveValue("max-width", 500, 138);
+	}
+
+	&__timer {
+		color: #d5203b;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 24, 15);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		@include adaptiveValue("margin-top", 10, 8);
+	}
+
+	&__controls {
+		@include adaptiveValue("margin-top", 39, 42);
+		display: flex;
+		align-items: center;
+		gap: toRem(31);
+	}
+
+	&__times {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: toRem(21);
+	}
+
+	&__counts {
+		color: rgba(255, 255, 255, 0.62);
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 20, 10);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 9, 8);
+	}
+
+	&__count {
+		@include adaptiveValue("font-size", 20, 15);
+	}
+
+	&__lables {
+		color: rgba(255, 255, 255, 0.62);
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 15, 10);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		@include adaptiveValue("margin-left", -220, -50);
+		@include adaptiveValue("margin-top", 19, 15);
+	}
+
+	&__button {
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			background-image: url("../img/button-icon-1.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			@include adaptiveValue("width", 114, 91);
+			@include adaptiveValue("height", 86, 68);
+			position: absolute;
+			@include adaptiveValue("top", -45, -30);
+			@include adaptiveValue("left", -30, -25);
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.banner {
+		&__button {
+			margin-top: toRem(42);
+		}
+	}
+}
