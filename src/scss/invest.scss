@@ -1,0 +1,70 @@
+.invest {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		background-image: url("../img/invest-bg.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top right;
+		@include adaptiveValue("width", 968, 390);
+		@include adaptiveValue("height", 1922, 990);
+		position: absolute;
+		@include adaptiveValue("left", 0, -100);
+		@include adaptiveValue("top", -968, -480);
+	}
+	&__title {
+		position: relative;
+		color: #f3efef;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 96, 35);
+		@include adaptiveValue("line-height", 90, 35);
+		font-style: normal;
+		font-weight: 600;
+		text-align: center;
+		z-index: 6;
+
+		span {
+			color: $primaryColor;
+		}
+	}
+
+	&__subtitle {
+		position: relative;
+		color: #fff;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 20, 14);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		max-width: 551px;
+		margin: 0 auto;
+		@include adaptiveValue("margin-top", 65, 43);
+		@include adaptiveValue("margin-bottom", 42, 55);
+		z-index: 6;
+	}
+
+	&__image {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-image: url("../img/invest-tesla.png");
+		background-repeat: no-repeat;
+		//background-size: cover;
+		background-position: top center;
+		max-width: toRem(872);
+		margin: 0 auto;
+		@include adaptiveValue("background-position-y", -80, -70);
+		@include adaptiveValue("background-size", 1300, 600);
+		@include adaptiveValue("padding-bottom", 30, 129);
+		z-index: 6;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

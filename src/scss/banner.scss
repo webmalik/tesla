@@ -80,6 +80,7 @@
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
+		animation: police-lights 1.5s infinite;
 	}
 
 	&__content-text {
@@ -184,5 +185,21 @@
 		&__button {
 			margin-top: toRem(42);
 		}
+	}
+}
+
+@keyframes police-lights {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		color: #fff;
+	}
+	10%,
+	40%,
+	60%,
+	90% {
+		color: #d5203b;
 	}
 }

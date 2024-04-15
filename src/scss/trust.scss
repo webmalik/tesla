@@ -1,0 +1,107 @@
+.trust {
+	position: relative;
+	z-index: 3;
+	@include adaptiveValue("padding-top", 233, 125);
+	@include adaptiveValue("padding-bottom", 320, 173);
+
+	&::after {
+		content: "";
+		display: block;
+		background-image: url("../img/trust-bg.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top right;
+		@include adaptiveValue("width", 1193, 390);
+		@include adaptiveValue("height", 1922, 799);
+		position: absolute;
+		right: 0;
+		@include adaptiveValue("top", -800, -280);
+	}
+	&__container {
+	}
+
+	&__title {
+		color: #f3efef;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 96, 35);
+		@include adaptiveValue("line-height", 90, 35);
+		font-style: normal;
+		font-weight: 600;
+
+		span {
+			color: $primaryColor;
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-content: center;
+		@include adaptiveValue("margin-top", 147, 94);
+		@include adaptiveValue("row-gap", 133, 88);
+		@include adaptiveValue("column-gap", 334, 37);
+		justify-items: start;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		@include adaptiveValue("max-width", 230, 140);
+		gap: toRem(37);
+	}
+
+	&__number {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiveValue("width", 146, 92);
+		@include adaptiveValue("height", 146, 92);
+		background-image: url("../img/trust-circle.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: #f3efef;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 40, 20);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 90px; /* 225% */
+	}
+
+	&__text {
+		color: #f3efef;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 20, 15);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		span {
+			color: $primaryColor;
+		}
+	}
+
+	&__button {
+		display: block;
+		margin: 0 auto;
+		@include adaptiveValue("margin-top", 133, 107);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 80%;
+			@include adaptiveValue("height", 49, 0);
+			background: #dc1d36;
+			filter: blur(35px);
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.trust {
+		&__wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}

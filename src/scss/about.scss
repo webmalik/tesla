@@ -1,5 +1,6 @@
 .about {
 	@include adaptiveValue("margin-top", 320, 156);
+	@include adaptiveValue("padding-bottom", 266, 183);
 	position: relative;
 	z-index: 2;
 

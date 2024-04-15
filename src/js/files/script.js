@@ -7,3 +7,6 @@ import * as wm from './wmFunctions.js';
 
 wm.menu();
 wm.timer();
+window.addEventListener('load', function (e) {
+    wm.reviewsSlider();
+});

@@ -1,3 +1,7 @@
+import Swiper from 'swiper';
+
+import 'swiper/css';
+
 export function menu() {
     const button = document.querySelector('.header__button');
     const close = document.querySelector('.header__menu-close');
@@ -23,9 +27,18 @@ export function menu() {
 
 export function timer() {
     const timerElement = document.querySelector('.banner__timer');
-    const timer = parseInt(timerElement.getAttribute('data-timer'));
+    let interval = parseInt(timerElement.getAttribute('data-timer'));
+    let endTime;
     let now = new Date();
-    const endTime = new Date(now.getTime() + timer * 60000);
+
+    if (localStorage.getItem('localTimer')) {
+        endTime = new Date(localStorage.getItem('localTimer'));
+    } else {
+        let end = new Date(now.getTime() + interval * 60000);
+        console.log(end);
+        localStorage.setItem('localTimer', end);
+        endTime = new Date(localStorage.getItem('localTimer'));
+    }
 
     function pad(num, size) {
         return ('000' + num).slice(-size);
@@ -33,11 +46,6 @@ export function timer() {
 
     function updateTimer() {
         now = new Date();
-        console.log(endTime);
-        // const endTime = new Date();
-        // endTime.setHours(23);
-        // endTime.setMinutes(59);
-        // endTime.setSeconds(59);
 
         let timeDiff = endTime.getTime() - now.getTime();
 
@@ -57,4 +65,27 @@ export function timer() {
     }
 
     updateTimer();
+}
+
+export function reviewsSlider() {
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 35,
+        centeredSlides: true,
+        initialSlide: 1,
+        breakpoints: {
+            320: {
+                slidesPerView: 1.3,
+                spaceBetween: 16,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 35,
+            },
+        },
+    });
 }

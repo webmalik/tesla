@@ -1,0 +1,166 @@
+.reviews {
+	background: #f3efef;
+	@include adaptiveValue("padding-top", 230, 120);
+	&__title {
+		position: relative;
+		display: inline-block;
+		margin: 0 auto;
+		color: #040309;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 96, 35);
+		@include adaptiveValue("line-height", 90, 35);
+		font-style: normal;
+		font-weight: 600;
+		text-wrap: balance;
+		@include adaptiveValue("margin-bottom", 150, 60);
+		span {
+			color: $primaryColor;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			@include adaptiveValue("width", 48, 20);
+			@include adaptiveValue("height", 48, 20);
+			background-image: url("../img/smile.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			transform: rotate(53deg);
+			position: absolute;
+			@include adaptiveValue("right", 260, -10);
+			@include adaptiveValue("top", 10, 5);
+		}
+		&::before {
+			content: "";
+			display: block;
+			@include adaptiveValue("width", 64, 32);
+			@include adaptiveValue("height", 64, 32);
+			background-image: url("../img/smile.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			@include adaptiveValue("left", 280, -10);
+			@include adaptiveValue("bottom", 40, 15);
+		}
+	}
+
+	&__inner {
+	}
+
+	&__wrapper {
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		border-radius: toRem(30);
+		background: #fff;
+		color: #040309;
+		padding: toRem(15);
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__label {
+		padding: 14px 28px;
+		border-radius: 17.5px;
+		border: 1px solid #3d3c40;
+		color: #3d3c40;
+		font-family: "Montserrat Alternates";
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 600;
+	}
+
+	&__num {
+		color: #3d3c40;
+		text-align: right;
+		font-family: "Montserrat Alternates";
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 600;
+		padding: 14px 10px;
+		border-radius: 17.5px;
+		border: 1px solid #3d3c40;
+	}
+
+	&__image {
+		@include adaptiveValue("max-width", 91, 73);
+		@include adaptiveValue("max-height", 91, 73);
+		border-radius: 50%;
+		overflow: hidden;
+		border-radius: 91px;
+		border: 3px solid rgba(211, 207, 207, 0.44);
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__name {
+		text-align: center;
+		color: #040309;
+		font-family: "Montserrat Alternates";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-top: toRem(20);
+	}
+
+	&__invest {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: toRem(5);
+		margin-bottom: toRem(4);
+		p {
+			color: #040309;
+			text-align: center;
+			font-family: "Montserrat Alternates";
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+		}
+		span {
+			color: #dc1d36;
+			font-family: "Montserrat Alternates";
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+	}
+
+	&__text {
+		color: #040309;
+		text-align: center;
+		font-family: "Montserrat Alternates";
+		@include adaptiveValue("font-size", 20, 14);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-wrap: balance;
+		@include adaptiveValue("padding-left", 36, 13);
+		@include adaptiveValue("padding-right", 36, 13);
+		@include adaptiveValue("padding-bottom", 44, 34);
+		@include adaptiveValue("padding-top", 44, 22);
+	}
+}
+
+@media (max-width: $tablet) {
+	.reviews {
+		&__slider {
+			padding: 0;
+			max-width: 100%;
+		}
+	}
+}
